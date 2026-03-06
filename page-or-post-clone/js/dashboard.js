@@ -1,5 +1,5 @@
 /**
- * Fast Page & Post Duplicator - Dashboard Chart
+ * CF Page or Post Duplicator - Dashboard Chart
  * Gráfico de clones por dia usando Chart.js
  */
 

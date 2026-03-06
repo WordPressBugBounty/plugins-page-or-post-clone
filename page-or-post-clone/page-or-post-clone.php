@@ -1,22 +1,35 @@
 <?php
 /**
  * @package Fast Page & Post Duplicator
- * @version 9.2
+ * @version 9.3
  */
 /*
 Plugin Name: Fast Page & Post Duplicator
 Plugin URI: https://wordpress.org/plugins/page-or-post-clone/
 Description: Post & Page Duplicator allows you to instantly clone any post, page, or custom post type while keeping all metadata, taxonomies and content.
 Author: Carlos Fazenda
-Version: 9.2
+Version: 9.3
 Author URI: http://carlosfazenda.com/
+Requires at least: 4.5
+Requires PHP: 5.6
+Text Domain: page-or-post-clone
 */
 
 /*
  * Duplica o Artigo/Página como draft e redireciona para o editor do Artigo/Página duplicado
  */
 
+// Prevenir acesso direto
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+// Definir constantes do plugin
+define('CF_CLONE_VERSION', '9.3');
 define('CF_CLONE_DB_VERSION', '1.0');
+define('CF_CLONE_PLUGIN_FILE', __FILE__);
+define('CF_CLONE_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('CF_CLONE_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 function cf_clone_install_or_update() {
     global $wpdb;
@@ -392,9 +405,9 @@ function cf_clone_dashboard_page() {
 function cf_clone_banner_assets() {
     wp_enqueue_style(
         'cf-clone-banner-css',
-        plugin_dir_url(__FILE__) . 'css/admin-dashboard.css',
+        CF_CLONE_PLUGIN_URL . 'css/admin-dashboard.css',
         [],
-        '1.1'
+        CF_CLONE_VERSION
     );
 }
 add_action('admin_enqueue_scripts', 'cf_clone_banner_assets');
@@ -417,9 +430,9 @@ function cf_clone_dashboard_assets($hook) {
     // JS do dashboard
     wp_enqueue_script(
         'cf-clone-dashboard',
-        plugin_dir_url(__FILE__) . 'js/dashboard.js',
+        CF_CLONE_PLUGIN_URL . 'js/dashboard.js',
         ['chartjs', 'jquery'],
-        '1.1',
+        CF_CLONE_VERSION,
         true
     );
 }

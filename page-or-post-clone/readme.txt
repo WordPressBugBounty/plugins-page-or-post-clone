@@ -81,6 +81,13 @@ Yes. The Fast Page & Post Duplicator plugin keeps the content and formatting of 
 
 == Changelog ==
 
+= 9.2 =
+* Fixed plugin update mechanism
+* Improved version control and consistency
+* Added proper plugin constants
+* Enhanced security with direct access prevention
+* Better compatibility with WordPress 6.7
+
 = 9.1 =
 * Improved dashboard with modern design
 * Enhanced statistics and clone tracking
@@ -124,6 +131,12 @@ Yes. The Fast Page & Post Duplicator plugin keeps the content and formatting of 
 * First Release
 
 == Upgrade Notice ==
+
+= 9.3 =
+Critical fix for plugin update mechanism. Please update immediately.
+
+= 9.2 =
+Bug fix
 
 = 9.1 =
 Enhanced dashboard design, improved statistics, and better WordPress compatibility.
